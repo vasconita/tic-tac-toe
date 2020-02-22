@@ -1,0 +1,51 @@
+@import "~style/ColorPalette.modules.css";
+
+.main
+{
+    display: flex;
+    width: 33%;
+    height: 33%;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: var(--dark-gray-blue);
+    flex: none;
+}
+
+.selectable
+{
+    cursor: pointer;
+}
+
+.icon
+{
+    width: 70%;
+    height: 70%;
+    padding: 15%;
+}
+
+.icon_selectedByUser
+{
+    fill: var(--blue);
+}
+
+.icon_selectedByMachine
+{
+    fill: var(--red);
+}
+
+.icon_forOverState,
+.icon_disabled
+{
+    opacity: 0;
+    transform: translateY(15px) scale(0.7);
+    transition: opacity 300ms ease-in-out, transform 400ms ease-in-out;
+}
+
+.main .icon_forOverState:hover,
+.icon_enabled
+{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 150ms ease-in-out, transform 200ms ease-in-out;
+}

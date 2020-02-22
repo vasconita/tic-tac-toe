@@ -1,0 +1,21 @@
+@import "~style/ColorPalette.modules.css";
+
+.main
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--purple);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message
+{
+
+    font-family: 'Press Start 2P';
+    font-size: 25px;
+    max-width: 500px;
+    color: var(--lightest-blue)
+}

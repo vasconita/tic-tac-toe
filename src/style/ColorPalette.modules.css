@@ -1,0 +1,20 @@
+:root
+{
+    --nearly-white: #F4F4F4;
+    --nearly-white-semitranparent: rgba(244, 244, 244, 0.2);
+    --purple: #5D275D;
+    --red: #B13E53;
+    --orange: #EF7D57;
+    --yellow: #FFCD75;
+    --light-green: #A7F070;
+    --green: #38B764;
+    --dark-green: #257179;
+    --dark-blue: #29366F;
+    --blue: #3B5DC9;
+    --light-blue: #41A6F6;
+    --lightest-blue: #73EFF7;
+    --light-gray-blue: #94B0C2;
+    --light-gray-blue-semitransparent: rgba(148, 180, 194, 0.2);
+    --gray-blue: #566C86;
+    --dark-gray-blue: #333C57;
+}
