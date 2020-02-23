@@ -1,0 +1,8 @@
+{
+  "home.title": "Tic Tac Toe",
+  "home.start": "Start",
+  "score.win": "¡Has ganado!",
+  "score.lose": "Has perdido...",
+  "score.tie": "Nadie ha ganado",
+  "score.score": "Tu puntuación es"
+}

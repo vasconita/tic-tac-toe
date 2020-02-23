@@ -2,15 +2,18 @@ import {combineReducers} from 'redux-immutable'
 import currentGameReducer, * as currentGameSelectors from 'reducers/currentGame/currentGameReducer';
 import rankingReducer from 'reducers/ranking/rankingReducer';
 import screenReducer, * as screenSelectors from 'reducers/screen/screenReducer';
+import {intlReducer} from 'react-intl-redux'
 
 const CURRENT_GAME = 'currentGame';
 const RANKING = 'ranking';
 const SCREEN = 'screen';
+export const INTL = 'intl';
 
 export default combineReducers({
   [CURRENT_GAME]: currentGameReducer,
   [RANKING]: rankingReducer,
   [SCREEN]: screenReducer,
+  [INTL]: intlReducer,
 });
 
 

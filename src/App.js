@@ -4,17 +4,17 @@ import store from 'store/configureStore';
 import {HashRouter as Router} from 'react-router-dom';
 import Routing from 'routing/routing'
 import ResizeManager from 'managers/ResizeManager';
+import Internationalization from 'intl/IntlManager';
 
-const App = () =>
-{
-  return <ReduxProvider store={store}>
-    <ResizeManager>
-      <Router>
-        <Routing/>
-      </Router>
-    </ResizeManager>
-  </ReduxProvider>
-
-};
+const App = React.memo(() =>
+    <ReduxProvider store={store}>
+      <Internationalization>
+        <ResizeManager>
+          <Router>
+            <Routing/>
+          </Router>
+        </ResizeManager>
+      </Internationalization>
+    </ReduxProvider>);
 
 export default App;

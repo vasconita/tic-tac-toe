@@ -16,6 +16,7 @@
     font-size: 30px;
     outline: 0;
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .main:active
