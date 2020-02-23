@@ -4,11 +4,26 @@
 {
     width: 100vw;
     height: 100vh;
-    background-color: var(--green);
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.win
+{
+    background-color: var(--green);
+}
+
+.lose
+{
+    background-color: var(--red);
+}
+
+.tie
+{
+    background-color: var(--light-gray);
 }
 
 .resultMessage
