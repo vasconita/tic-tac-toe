@@ -25,6 +25,26 @@ export const selectGridEntry = (id) => (dispatch, getState) =>
 
   // CheckIfGameIsFinished
 
+  checkIfSomeoneWins(dispatch, getState);
+
+  if (!isGameFinished(getState()))
+  {
+    // Choose a random grid entry
+    const machineRandomSelectedId = getRandomAvailableGridEntryId(getState());
+
+    setTimeout(() =>
+    {
+      dispatch(getSelectGridEntryAction(machineRandomSelectedId, false))
+      checkIfSomeoneWins(dispatch, getState);
+    }, MACHINE_ANSWER_DELAY_IN_MS)
+  }
+
+
+};
+
+const checkIfSomeoneWins = (dispatch, getState) =>
+{
+
   if (isGameFinished(getState()))
   {
 
@@ -36,16 +56,5 @@ export const selectGridEntry = (id) => (dispatch, getState) =>
           dispatch(setWinner(winner))
         }
         , AFTER_WIN_DELAY)
-  } else
-  {
-
-    // Choose a random grid entry
-
-    const machineRandomSelectedId = getRandomAvailableGridEntryId(getState());
-
-    setTimeout(() => dispatch(getSelectGridEntryAction(machineRandomSelectedId, false))
-        , MACHINE_ANSWER_DELAY_IN_MS)
   }
-
-
 };

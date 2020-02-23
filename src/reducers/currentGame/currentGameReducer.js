@@ -3,7 +3,7 @@ import {END_GAME, START_GAME, CHANGE_CURRENT_SCORE, SELECT_GRID_ENTRY, SET_WINNE
 import {GAME_IN_COURSE, SCORE, ID, SELECTED_BY_USER, SELECTED_BY_MACHINE, GRID, USER_CAN_SELECT, GRID_ENTRIES, USER, MACHINE, WINNER} from 'actions/currentGame/currentGameConstants';
 import {hasWinnerCombination} from 'actions/currentGame/currentGameUtil'
 
-const initialState = Immutable.fromJS(
+export const initialState = Immutable.fromJS(
     {
       [SCORE]: 10000,
       [GAME_IN_COURSE]: false,
@@ -49,7 +49,7 @@ export const getScore = (state) => state.get(SCORE);
 
 export const getGridEntryContent = (state, id) => state.getIn([GRID, id]);
 
-export const canUserSelect = (state) => state.get(USER_CAN_SELECT);
+export const canUserSelect = (state) => state.get(USER_CAN_SELECT) && !isGameFinished(state);
 
 
 const getAvailableGridEntriesIds = (state) =>
@@ -78,7 +78,7 @@ const getGridEntriesFilterByWhoSelected = (state, selectedByUserType) =>
 
         }, Immutable.List());
 
-const isWinner = (state, userType) =>
+export const isWinner = (state, userType) =>
 {
 
   if (userType === USER)
@@ -112,4 +112,6 @@ export const getWinner = (state) =>
   }
 };
 
-export const isGameFinished = (state) => state.get(GRID).size === GRID_ENTRIES || getWinner(state) != null;
+const getFilledGridEntriesMap = (state) => state.get(GRID).filter(entry => entry != null);
+
+export const isGameFinished = (state) => getFilledGridEntriesMap(state).size === GRID_ENTRIES || getWinner(state) != null;
