@@ -2,7 +2,7 @@
 
 One basic implementation of the classic game Tic Tac Toe.
 
-It's made with [Create React App](https://github.com/facebook/create-react-app) (God bless [Dan Abramov](https://github.com/gaearon) 🙏)
+It's made with [Create React App](https://github.com/facebook/create-react-app) (God bless [Dan Abramov](https://github.com/gaearon))
 
 This is a personal non-profit project that has the following purposes:
 
@@ -19,6 +19,10 @@ Do you want to use this project for commercial purposes? I don't have a problem 
 ## Dependencies install
 
 ``yarn``
+
+## Local development server
+
+``yarn start``
 
 ## Create a build
 
