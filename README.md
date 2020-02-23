@@ -12,3 +12,18 @@ This is a personal non-profit project that has the following purposes:
 
 
 Do you want to use this project for commercial purposes? I don't have a problem with that, you can use it for free 😉
+
+
+[Live Demo](https://naif-mitts.000webhostapp.com/)
+
+## Dependencies install
+
+``yarn``
+
+## Create a build
+
+``yarn build``
+
+## Execute tests
+
+``yarn test``
