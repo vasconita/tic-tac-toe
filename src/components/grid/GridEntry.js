@@ -11,7 +11,7 @@ import CrossIcon from "icons/CrossIcon";
 
 export const BORDER_PROPORTION = 0.05;
 
-const GridEntry = ({id, sizeInPx}) =>
+const GridEntry = React.memo(({id, sizeInPx}) =>
 {
   // Redux selectors
   const gridEntryContent = useSelector(state => rootReducer.getGridEntryContent(state, id));
@@ -47,7 +47,7 @@ const GridEntry = ({id, sizeInPx}) =>
       return <CrossIcon className={mergeClasses(styles.icon, styles.icon_selectedByUser)}/>
     } else if (gridEntryContent === SELECTED_BY_MACHINE)
     {
-      return <CircleIcon className={mergeClasses(styles.icon, styles.icon_selectedByMachine,styles.icon_enabled)}/>
+      return <CircleIcon className={mergeClasses(styles.icon, styles.icon_selectedByMachine, styles.icon_enabled)}/>
     } else if (!gridEntryContent && canUserSelect)
     {
       return <CrossIcon className={mergeClasses(styles.icon, styles.icon_selectedByUser, styles.icon_forOverState)}/>
@@ -67,7 +67,7 @@ const GridEntry = ({id, sizeInPx}) =>
     </span>
 
   </div>;
-};
+});
 
 GridEntry.propTypes = {
   id: Proptypes.number,

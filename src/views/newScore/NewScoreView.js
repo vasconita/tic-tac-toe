@@ -38,7 +38,7 @@ export const messages = defineMessages({
 
 });
 
-const NewScoreView = () =>
+const NewScoreView = React.memo(() =>
 {
   // Redux selectors
   const winner = useSelector(state => getWinner(state));
@@ -79,6 +79,6 @@ const NewScoreView = () =>
                 onClick={onStartButtonClicked}/>
     <HomeButton className={styles.button} label={intl.formatMessage(messages.menu)} to={HOME_PATH}/>
   </div>
-};
+});
 
 export default NewScoreView;

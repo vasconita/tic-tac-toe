@@ -20,7 +20,7 @@ export const messages = defineMessages({
 
 });
 
-const HomeView = () =>
+const HomeView = React.memo(() =>
 {
   // Redux dispatch
   const dispatch = useDispatch();
@@ -43,6 +43,6 @@ const HomeView = () =>
       <LanguageSelector className={styles.languageSelector}/>
     </div>
   </div>
-};
+});
 
 export default HomeView;

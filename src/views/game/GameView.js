@@ -8,7 +8,7 @@ import RotationSpinner from 'components/spinners/RotationSpinner';
 import {mergeClasses} from "util/StyleUtil";
 import * as rootReducer from "reducers/rootReducer";
 
-const GameView = () =>
+const GameView = React.memo(() =>
 {
   // Redux selectors
   const windowWidth = useSelector(state => rootReducer.getWindowWidth(state));
@@ -44,7 +44,7 @@ const GameView = () =>
     </div>
     <RotationSpinner className={getSpinnerClasses()}/>
   </div>;
-};
+});
 
 
 export default GameView;

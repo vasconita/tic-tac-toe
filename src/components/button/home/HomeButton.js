@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import {mergeClasses} from "util/StyleUtil";
 import {Link} from 'react-router-dom';
 
-const HomeButton = ({label, className, to, onClick}) =>
+const HomeButton = React.memo(({label, className, to, onClick}) =>
     <Link className={mergeClasses(styles.main, className)}
           to={to} onClick={onClick}>
       {label}
-    </Link>;
+    </Link>);
 
 HomeButton.propTypes = {
   label: PropTypes.string,

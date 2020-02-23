@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const UnitedKingdomFlagIcon = ({className}) =>
+const UnitedKingdomFlagIcon = React.memo(({className}) =>
 {
-
   return <svg className={className} viewBox="0 0 512 512">
     <circle style={{fill: "#F0F0F0"}} cx="256" cy="256" r="256"/>
     <g>
@@ -39,7 +38,7 @@ const UnitedKingdomFlagIcon = ({className}) =>
     </g>
   </svg>
 
-};
+});
 
 UnitedKingdomFlagIcon.propTypes = {
   className: PropTypes.string,
