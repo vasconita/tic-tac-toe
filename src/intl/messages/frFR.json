@@ -4,5 +4,7 @@
   "score.win": "Vous avez gagné !",
   "score.lose": "Vous avez perdu...",
   "score.tie": "Personne n'a gagné",
-  "score.score": "Votre score est de"
+  "score.score": "Votre score est de",
+  "score.playAgain": "Jouer à nouveau",
+  "score.menu": "Menu"
 }

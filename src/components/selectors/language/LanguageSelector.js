@@ -36,7 +36,6 @@ const LanguageSelector = React.memo(({className}) =>
 
 
   return <div className={mergeClasses(styles.main, className)}>
-
     <RoundedButton className={styles.button} icon={UnitedKingdomFlagIcon} onClick={onEnglishSelected}/>
     <RoundedButton className={styles.button} icon={SpainFlagIcon} onClick={onSpanishSelected}/>
     <RoundedButton className={styles.button} icon={FranceFlagIcon} onClick={onFrenchSelected}/>

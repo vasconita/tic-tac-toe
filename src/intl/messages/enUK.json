@@ -1,8 +1,10 @@
 {
   "home.title": "Tic Tac Toe",
   "home.start": "Start",
-  "score.win": "¡Has ganado!",
-  "score.lose": "Has perdido...",
-  "score.tie": "Nadie ha ganado",
-  "score.score": "Tu puntuación es"
+  "score.win": "You win!",
+  "score.lose": "You lost...",
+  "score.tie": "Nobody wins",
+  "score.score": "Your score is",
+  "score.playAgain": "Play again",
+  "score.menu": "Menu"
 }
