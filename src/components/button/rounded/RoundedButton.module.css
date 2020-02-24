@@ -11,11 +11,17 @@
     transition: box-shadow 200ms ease-in-out;
 }
 
-.main:hover
+/* Show only in devices that supports hover
+   in order to prevent a bad user experience */
+@media (hover: hover)
 {
-    box-shadow: -1px 15px 14px 3px rgba(0, 0, 0, 0.5);
-    position: relative;
+    .main:hover
+    {
+        box-shadow: -1px 15px 14px 3px rgba(0, 0, 0, 0.5);
+        position: relative;
+    }
 }
+
 
 .icon
 {

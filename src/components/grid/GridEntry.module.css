@@ -49,3 +49,15 @@
     transform: translateY(0) scale(1);
     transition: opacity 150ms ease-in-out, transform 200ms ease-in-out;
 }
+
+/* Show only in devices that supports hover
+   in order to prevent a bad user experience */
+@media (hover: hover)
+{
+    .main .icon_forOverState:hover,
+    .icon_enabled
+    {
+        opacity: 1;
+    }
+}
+
