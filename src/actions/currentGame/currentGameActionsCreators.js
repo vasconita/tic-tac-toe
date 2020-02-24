@@ -3,6 +3,7 @@ import {START_GAME, END_GAME, CHANGE_CURRENT_SCORE, SELECT_GRID_ENTRY, SET_WINNE
 import {getRandomAvailableGridEntryId, getWinner, isGameFinished} from 'reducers/rootReducer';
 import {SCORE, ID, SELECTED_BY_USER, WINNER} from 'actions/currentGame/currentGameConstants';
 import {NEW_SCORE} from 'routing/routes';
+import {wait} from 'util/TimeUtil';
 
 export const startGame = () => createAction(START_GAME)({});
 export const endGame = () => createAction(END_GAME)({});
@@ -18,7 +19,7 @@ const getSelectGridEntryAction = (id, selectedByUser) => createAction(SELECT_GRI
       [SELECTED_BY_USER]: selectedByUser,
     });
 
-export const selectGridEntry = (id) => (dispatch, getState) =>
+export const selectGridEntry = (id) => async (dispatch, getState) =>
 {
   // Dispatch User selection
   dispatch(getSelectGridEntryAction(id, true));
@@ -32,29 +33,24 @@ export const selectGridEntry = (id) => (dispatch, getState) =>
     // Choose a random grid entry
     const machineRandomSelectedId = getRandomAvailableGridEntryId(getState());
 
-    setTimeout(() =>
-    {
-      dispatch(getSelectGridEntryAction(machineRandomSelectedId, false))
-      checkIfSomeoneWins(dispatch, getState);
-    }, MACHINE_ANSWER_DELAY_IN_MS)
+    await wait(MACHINE_ANSWER_DELAY_IN_MS);
+    dispatch(getSelectGridEntryAction(machineRandomSelectedId, false));
+    checkIfSomeoneWins(dispatch, getState);
+
   }
 
 
 };
 
-const checkIfSomeoneWins = (dispatch, getState) =>
+const checkIfSomeoneWins = async (dispatch, getState) =>
 {
 
   if (isGameFinished(getState()))
   {
-
     const winner = getWinner(getState());
 
-    setTimeout(() =>
-        {
-          window.location.hash = NEW_SCORE;
-          dispatch(setWinner(winner))
-        }
-        , AFTER_WIN_DELAY)
+    await wait(AFTER_WIN_DELAY);
+    window.location.hash = NEW_SCORE;
+    dispatch(setWinner(winner))
   }
 };
