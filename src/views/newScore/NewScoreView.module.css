@@ -3,12 +3,30 @@
 .main
 {
     width: 100vw;
-    height: 100vh;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/** Trick to have a better experience in iOS. Should be improved **/
+
+/* iOS Devices */
+@supports (-webkit-touch-callout: none)
+{
+    .main
+    {
+        height: -webkit-fill-available;
+    }
+}
+
+/* Other */
+@supports not (-webkit-touch-callout: none)
+{
+    .main
+    {
+        height: 100vh;
+    }
 }
 
 .win

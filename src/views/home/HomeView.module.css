@@ -4,21 +4,40 @@
 {
     display: flex;
     width: 100vw;
-    height: 100vh;
     background-color: var(--dark-blue);
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
+/** Trick to have a better experience in iOS. Should be improved **/
+
+/* iOS Devices */
+@supports (-webkit-touch-callout: none)
+{
+    .main
+    {
+        height: -webkit-fill-available;
+    }
+}
+
+/* Other */
+@supports not (-webkit-touch-callout: none)
+{
+    .main
+    {
+        height: 100vh;
+    }
+}
+
 .titleArea
 {
     position: relative;
     display: flex;
-    height: 50%;
     width: 100%;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20vh;
 }
 
 .title
@@ -34,8 +53,6 @@
 {
     position: relative;
     display: flex;
-    height: 40%;
-    margin-bottom: 10%;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -44,10 +61,9 @@
 
 .button
 {
-    margin: 15px;
+    margin-bottom: 10vh;
 }
 
 .languageSelector
 {
-    margin-top: 5vh;
 }
