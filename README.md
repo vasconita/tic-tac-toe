@@ -14,7 +14,7 @@ This is a personal non-profit project that has the following purposes:
 Do you want to use this project for commercial purposes? I don't have a problem with that, you can use it for free 😉
 
 
-[Live Demo](https://wizardly-raman-d60e41.netlify.com/)
+[Live Demo](https://optimistic-leakey-d27e83.netlify.app/)
 
 ## Dependencies install
 
